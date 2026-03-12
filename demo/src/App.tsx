@@ -20,6 +20,7 @@ export function App() {
   const [result, setResult] = useState<ParseResult>(() => runParse(DEMO_EXAMPLES[0].html));
   const [view, setView] = useState<ResultView>('json');
   const [error, setError] = useState<string | null>(null);
+  const logoSrc = `${import.meta.env.BASE_URL}simpleparserlogo.svg`;
 
   const prettyJson = useMemo(() => JSON.stringify(result, null, 2), [result]);
 
@@ -29,7 +30,7 @@ export function App() {
       setResult(nextResult);
       setError(null);
     } catch (parseError) {
-      setError(parseError instanceof Error ? parseError.message : 'Failed to parse input.');
+      setError(parseError instanceof Error ? parseError.message : 'Не удалось разобрать ввод.');
     }
   };
 
@@ -52,17 +53,28 @@ export function App() {
 
   return (
     <main className="layout">
-      <header className="hero">
-        <img className="hero-logo" src="/simpleparserlogo.png" alt="Логотип Simple Parser" />
-        <p className="eyebrow">Simple Parser</p>
-        <h1>Interactive HTML Parsing Workbench</h1>
-        <p className="muted">
-          Inspect metadata, headings, links, contacts, tokens, and AST with one parse operation.
-        </p>
+      <header className="hero card">
+        <div className="hero-head">
+          <img className="hero-logo" src={logoSrc} alt="Логотип Simple Parser" />
+          <div>
+            <p className="eyebrow">Simple Parser</p>
+            <h1>Демо-панель разбора HTML</h1>
+            <p className="muted">
+              Анализируйте структуру, метаданные, контакты и токены документа в одном окне.
+            </p>
+          </div>
+        </div>
+        <div className="hero-pills" aria-label="Возможности парсера">
+          <span className="pill">Метаданные</span>
+          <span className="pill">Заголовки</span>
+          <span className="pill">Ссылки</span>
+          <span className="pill">AST</span>
+          <span className="pill">Токены</span>
+        </div>
       </header>
 
       <section className="examples card">
-        <h2>Examples</h2>
+        <h2>Примеры</h2>
         <div className="examples-grid">
           {DEMO_EXAMPLES.map((example) => (
             <button key={example.id} className="example-button" onClick={() => selectExample(example.id)}>
@@ -76,13 +88,13 @@ export function App() {
       <section className="workspace">
         <article className="card editor-panel">
           <div className="panel-header">
-            <h2>Input</h2>
+            <h2>Ввод</h2>
             <button className="action" onClick={parseInput}>
-              Run Parser
+              Запустить парсер
             </button>
           </div>
           <textarea
-            aria-label="HTML input"
+            aria-label="HTML ввод"
             className="editor"
             value={input}
             onChange={(event) => setInput(event.target.value)}
@@ -92,40 +104,40 @@ export function App() {
 
         <article className="card output-panel">
           <div className="panel-header">
-            <h2>Result</h2>
+            <h2>Результат</h2>
             <button className="action ghost" onClick={copyJson}>
-              Copy JSON
+              Копировать JSON
             </button>
           </div>
 
           <div className="stats-grid">
             <div className="stat">
-              <span>Headings</span>
+              <span>Заголовки</span>
               <strong>{result.headings.total}</strong>
             </div>
             <div className="stat">
-              <span>Links</span>
+              <span>Ссылки</span>
               <strong>{result.links.total}</strong>
             </div>
             <div className="stat">
-              <span>Emails</span>
+              <span>Email</span>
               <strong>{result.contacts.emails.length}</strong>
             </div>
             <div className="stat">
-              <span>Words</span>
+              <span>Слова</span>
               <strong>{result.text.wordCount}</strong>
             </div>
             <div className="stat">
-              <span>Forms</span>
+              <span>Формы</span>
               <strong>{result.structure.forms}</strong>
             </div>
             <div className="stat">
-              <span>Controls</span>
+              <span>Поля</span>
               <strong>{result.structure.formControls}</strong>
             </div>
           </div>
 
-          <div className="tabs" role="tablist" aria-label="Result views">
+          <div className="tabs" role="tablist" aria-label="Представления результата">
             <button
               className={view === 'json' ? 'tab active' : 'tab'}
               role="tab"
@@ -138,14 +150,14 @@ export function App() {
               role="tab"
               onClick={() => setView('tree')}
             >
-              Tree View
+              Дерево
             </button>
             <button
               className={view === 'tokens' ? 'tab active' : 'tab'}
               role="tab"
               onClick={() => setView('tokens')}
             >
-              Tokens
+              Токены
             </button>
           </div>
 
@@ -160,7 +172,7 @@ export function App() {
                   <AstTree node={result.ast} />
                 </ul>
               ) : (
-                <p className="muted">AST generation is disabled.</p>
+                <p className="muted">Генерация AST отключена.</p>
               )
             ) : null}
 

@@ -8,22 +8,22 @@ export interface DemoExample {
 export const DEMO_EXAMPLES: DemoExample[] = [
   {
     id: 'landing',
-    title: 'Landing Page',
-    description: 'Typical product page with metadata and contacts.',
+    title: 'Лендинг',
+    description: 'Типичная продуктовая страница с метаданными и контактами.',
     html: `<!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <title>Acme Analytics</title>
-    <meta name="description" content="Track your product metrics in real-time." />
+    <title>Acme Аналитика</title>
+    <meta name="description" content="Отслеживайте метрики продукта в реальном времени." />
   </head>
   <body>
     <header>
-      <h1>Acme Analytics</h1>
-      <h2>Data visibility for distributed teams</h2>
+      <h1>Acme Аналитика</h1>
+      <h2>Единая видимость данных для распределённых команд</h2>
     </header>
     <main>
-      <p>Email us at hello@acme.dev or support@acme.dev</p>
-      <a href="/contact">Contact team</a>
+      <p>Напишите нам: hello@acme.dev или support@acme.dev</p>
+      <a href="/contact">Связаться с командой</a>
       <a href="https://github.com/acme">GitHub</a>
       <img src="hero.png" />
     </main>
@@ -32,67 +32,67 @@ export const DEMO_EXAMPLES: DemoExample[] = [
   },
   {
     id: 'blog',
-    title: 'Blog Article',
-    description: 'More headings and rich text sample.',
+    title: 'Статья блога',
+    description: 'Пример с большим числом заголовков и текстом.',
     html: `<!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <title>Engineering Blog</title>
-    <meta name="description" content="Architecture lessons from production systems" />
-    <meta name="keywords" content="architecture, testing, parser" />
+    <title>Инженерный блог</title>
+    <meta name="description" content="Уроки архитектуры из продакшен-систем" />
+    <meta name="keywords" content="архитектура, тестирование, парсер" />
   </head>
   <body>
     <article>
-      <h1>Architecture Lessons</h1>
-      <h2>Keep modules focused</h2>
-      <p>This article explains why clear boundaries improve maintainability.</p>
-      <h2>Measure before scaling</h2>
-      <p>Contact +44 20 7946 0958 for consulting.</p>
-      <a href="#comments">Jump to comments</a>
+      <h1>Уроки архитектуры</h1>
+      <h2>Держите модули сфокусированными</h2>
+      <p>Эта статья объясняет, почему чёткие границы улучшают поддерживаемость проекта.</p>
+      <h2>Измеряйте до масштабирования</h2>
+      <p>Для консультации звоните: +44 20 7946 0958.</p>
+      <a href="#comments">Перейти к комментариям</a>
     </article>
   </body>
 </html>`
   },
   {
     id: 'minimal',
-    title: 'Minimal HTML',
-    description: 'Small snippet to inspect tokenization quickly.',
-    html: `<div><h1>Hello parser</h1><p>Fast feedback loop.</p></div>`
+    title: 'Минимальный HTML',
+    description: 'Короткий сниппет для быстрой проверки токенизации.',
+    html: `<div><h1>Привет, парсер</h1><p>Быстрый цикл обратной связи.</p></div>`
   },
   {
     id: 'checkout',
-    title: 'Checkout Form',
-    description: 'Form-heavy page to inspect structure metrics.',
+    title: 'Форма оплаты',
+    description: 'Страница с формами для проверки структурных метрик.',
     html: `<!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <title>Checkout</title>
-    <meta name="description" content="Checkout form demo" />
+    <title>Оплата</title>
+    <meta name="description" content="Демо-форма оформления заказа" />
   </head>
   <body>
     <main>
-      <h1>Checkout</h1>
+      <h1>Оформление заказа</h1>
       <form action="/pay" method="post">
         <label>
           Email
           <input type="email" name="email" />
         </label>
         <label>
-          Country
+          Страна
           <select name="country">
-            <option>US</option>
-            <option>DE</option>
+            <option>Россия</option>
+            <option>Германия</option>
           </select>
         </label>
         <label>
-          Notes
+          Комментарий
           <textarea name="notes"></textarea>
         </label>
-        <button type="submit">Pay now</button>
+        <button type="submit">Оплатить</button>
       </form>
       <ul>
-        <li>SSL secured</li>
-        <li>Instant receipt</li>
+        <li>Защищённое SSL-соединение</li>
+        <li>Мгновенная квитанция</li>
       </ul>
     </main>
   </body>

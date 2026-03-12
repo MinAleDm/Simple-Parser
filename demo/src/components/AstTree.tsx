@@ -8,22 +8,22 @@ interface AstTreeProps {
 
 function renderLabel(node: AstNode): string {
   if (node.type === 'element') {
-    return `<${node.name ?? 'unknown'}>`;
+    return `<${node.name ?? 'неизвестно'}>`;
   }
 
   if (node.type === 'text') {
-    return `text: ${node.value ?? ''}`;
+    return `текст: ${node.value ?? ''}`;
   }
 
   if (node.type === 'comment') {
-    return `comment: ${node.value ?? ''}`;
+    return `комментарий: ${node.value ?? ''}`;
   }
 
   if (node.type === 'directive') {
-    return `directive: ${node.value ?? ''}`;
+    return `директива: ${node.value ?? ''}`;
   }
 
-  return 'root';
+  return 'корень';
 }
 
 export function AstTree({ node, depth = 0 }: AstTreeProps) {

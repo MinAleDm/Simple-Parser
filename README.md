@@ -1,13 +1,17 @@
 # Simple Parser
 
-<p align="center">
+<div>
   <a href="https://github.com/MinAleDm/Simple-Parser/actions/workflows/ci.yml"><img src="https://github.com/MinAleDm/Simple-Parser/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
   <a href="https://github.com/MinAleDm/Simple-Parser/actions/workflows/deploy-pages.yml"><img src="https://github.com/MinAleDm/Simple-Parser/actions/workflows/deploy-pages.yml/badge.svg" alt="Deploy Pages" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" /></a>
   <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-</p>
+</div>
 
 Современный монорепозиторий для анализа HTML: типизированное ядро парсера, CLI-инструмент, интерактивное демо на React + Vite, тесты и CI/CD.
+
+`Simple Parser` полезен и для быстрой ручной проверки HTML, и для автоматизированного аудита страниц в скриптах или CI-пайплайнах. Проект объединяет библиотеку, CLI и демо-интерфейс, чтобы одинаково удобно работать и в коде, и через UI.
+
+Парсер возвращает единый типизированный отчёт: от метаданных страницы и ссылок до структуры документа, текстовых метрик, токенов и AST. Это помогает быстрее находить проблемы в разметке, контенте и SEO-сигналах.
 
 ## Ссылки
 

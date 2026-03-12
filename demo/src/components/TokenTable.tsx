@@ -6,7 +6,7 @@ interface TokenTableProps {
 
 export function TokenTable({ tokens }: TokenTableProps) {
   if (tokens.length === 0) {
-    return <p className="muted">Token extraction is disabled for this parse run.</p>;
+    return <p className="muted">Извлечение токенов отключено для этого запуска.</p>;
   }
 
   return (
@@ -14,9 +14,9 @@ export function TokenTable({ tokens }: TokenTableProps) {
       <table>
         <thead>
           <tr>
-            <th>Type</th>
-            <th>Value</th>
-            <th>Range</th>
+            <th>Тип</th>
+            <th>Значение</th>
+            <th>Диапазон</th>
           </tr>
         </thead>
         <tbody>

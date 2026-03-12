@@ -1,0 +1,28 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="url(#bg)" />
+
+  <line x1="128" y1="70" x2="80" y2="120" stroke="white" stroke-width="8" />
+  <line x1="128" y1="70" x2="176" y2="120" stroke="white" stroke-width="8" />
+
+  <line x1="80" y1="120" x2="60" y2="170" stroke="white" stroke-width="8" />
+  <line x1="80" y1="120" x2="100" y2="170" stroke="white" stroke-width="8" />
+
+  <line x1="176" y1="120" x2="156" y2="170" stroke="white" stroke-width="8" />
+  <line x1="176" y1="120" x2="196" y2="170" stroke="white" stroke-width="8" />
+
+  <circle cx="128" cy="70" r="10" fill="white" />
+  <circle cx="80" cy="120" r="9" fill="white" />
+  <circle cx="176" cy="120" r="9" fill="white" />
+
+  <circle cx="60" cy="170" r="8" fill="white" />
+  <circle cx="100" cy="170" r="8" fill="white" />
+  <circle cx="156" cy="170" r="8" fill="white" />
+  <circle cx="196" cy="170" r="8" fill="white" />
+</svg>
