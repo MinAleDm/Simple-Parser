@@ -327,14 +327,6 @@ export function App() {
             <div className="tabs" role="tablist" aria-label="Представления результата">
               <button
                 type="button"
-                className={view === 'json' ? 'tab active' : 'tab'}
-                role="tab"
-                onClick={() => setView('json')}
-              >
-                JSON
-              </button>
-              <button
-                type="button"
                 className={view === 'tree' ? 'tab active' : 'tab'}
                 role="tab"
                 onClick={() => setView('tree')}
@@ -348,6 +340,14 @@ export function App() {
                 onClick={() => setView('tokens')}
               >
                 Токены
+              </button>
+              <button
+                type="button"
+                className={view === 'json' ? 'tab active' : 'tab'}
+                role="tab"
+                onClick={() => setView('json')}
+              >
+                JSON
               </button>
             </div>
 
