@@ -22,13 +22,13 @@ export function TokenTable({ tokens }: TokenTableProps) {
         <tbody>
           {tokens.map((token, index) => (
             <tr key={`${token.type}-${token.start}-${index}`}>
-              <td>
+              <td className="token-type-cell">
                 <span className={`token-badge token-${token.type}`}>{token.type}</span>
               </td>
-              <td>
-                <code>{token.value}</code>
+              <td className="token-value-cell">
+                <code className="token-value">{token.value}</code>
               </td>
-              <td>
+              <td className="token-range-cell">
                 {token.start}-{token.end}
               </td>
             </tr>

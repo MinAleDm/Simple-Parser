@@ -7,26 +7,114 @@ export interface DemoExample {
 
 export const DEMO_EXAMPLES: DemoExample[] = [
   {
-    id: 'landing',
-    title: 'Лендинг',
-    description: 'Типичная продуктовая страница с метаданными и контактами.',
+    id: 'enterprise-portal',
+    title: 'Корпоративный портал',
+    description: 'Сложный HTML с формами, таблицей, медиа, скриптами и контактами.',
     html: `<!doctype html>
 <html lang="ru">
   <head>
-    <title>Acme Аналитика</title>
-    <meta name="description" content="Отслеживайте метрики продукта в реальном времени." />
+    <title>NovaBoard — портал команды аналитики</title>
+    <meta name="description" content="Единый портал для управления релизами, алертами и отчётами по продукту." />
+    <meta name="keywords" content="analytics, release, monitoring, dashboard" />
+    <meta property="og:title" content="NovaBoard Portal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portal.novaboard.dev" />
+    <link rel="canonical" href="https://portal.novaboard.dev" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NovaBoard",
+        "url": "https://portal.novaboard.dev",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "support@novaboard.dev",
+          "telephone": "+7 495 000 00 01"
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
-      <h1>Acme Аналитика</h1>
-      <h2>Единая видимость данных для распределённых команд</h2>
+      <h1>NovaBoard Portal</h1>
+      <h2>Контроль инцидентов и релизов в реальном времени</h2>
+      <nav>
+        <a href="/overview">Обзор</a>
+        <a href="/incidents">Инциденты</a>
+        <a href="/releases">Релизы</a>
+        <a href="https://github.com/MinAleDm/Simple-Parser">GitHub</a>
+      </nav>
     </header>
     <main>
-      <p>Напишите нам: hello@acme.dev или support@acme.dev</p>
-      <a href="/contact">Связаться с командой</a>
-      <a href="https://github.com/acme">GitHub</a>
-      <img src="hero.png" />
+      <section id="kpi">
+        <h3>Ключевые метрики</h3>
+        <ul>
+          <li>Uptime: 99.98%</li>
+          <li>MTTR: 17m</li>
+          <li>Ошибки 5xx за сутки: 42</li>
+        </ul>
+      </section>
+
+      <section id="release-plan">
+        <h3>План релиза 2.4.0</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Компонент</th>
+              <th>Статус</th>
+              <th>Ответственный</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>API Gateway</td>
+              <td>Ready</td>
+              <td>platform@novaboard.dev</td>
+            </tr>
+            <tr>
+              <td>Billing Worker</td>
+              <td>QA</td>
+              <td>qa@novaboard.dev</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="feedback">
+        <h3>Сообщить о проблеме</h3>
+        <form action="/tickets" method="post">
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Приоритет
+            <select name="priority">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+          <label>
+            Описание
+            <textarea name="description"></textarea>
+          </label>
+          <button type="submit">Создать тикет</button>
+        </form>
+      </section>
+
+      <aside>
+        <p>Связаться с дежурной сменой: noc@novaboard.dev</p>
+        <p>Телефон SLA: +7 495 000 00 02</p>
+      </aside>
+
+      <img src="/assets/portal-dashboard.png" alt="Панель мониторинга" />
     </main>
+    <footer>
+      <p>&copy; 2026 NovaBoard</p>
+      <a href="mailto:support@novaboard.dev">support@novaboard.dev</a>
+      <a href="tel:+74950000001">+7 495 000 00 01</a>
+    </footer>
   </body>
 </html>`
   },
